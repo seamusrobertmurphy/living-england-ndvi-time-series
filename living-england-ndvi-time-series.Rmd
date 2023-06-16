@@ -1,5 +1,5 @@
 ---
-title: "Pilot: Time Series of NDVI Analysis of Living England AOI"
+title: "Pilot: NDVI Time Series of Living England AOI"
 author: "SM"
 date: "2023-06-16"
 output: html_document
@@ -34,6 +34,9 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, error=FALSE, message = FALSE)
 set.seed(123)
 ```
 
+## Action:
 
-## R Markdown
+The following report documents pilot code for evaluating spectral indices (NDVI) for identifying change in Living England AOI. This includes deployment of google earth engine through python and rgee package for data acquisition and rendering of spectral mosaics, as well as development of acccuracy metrics using caret modelling package in R.
+
+### Assign Python(3.10.6) version in use
 
