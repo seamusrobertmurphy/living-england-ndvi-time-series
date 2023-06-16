@@ -5,46 +5,6 @@ date: "2023-06-16"
 output: html_document
 ---
 
-```{r setup, echo=FALSE, message=FALSE,warning=FALSE, error=FALSE}
-library(sf)
-library(sp)
-library(terra)
-library(raster)
-library(dplyr)
-library(caret)
-library(caretEnsemble)
-library(ForestTools)
-library(lidR)
-library(randomForest)
-library(e1071)
-library(rgdal)
-library(rgeos)
-library(Rcpp)
-library(rmarkdown)
-library(knitr)
-library(MASS)
-library(car)
-library(reticulate)
-library(rstudioapi)
-library(leaflet)
-library(magrittr)
-library(jsonlite)
-library(processx)
-library(leafem)
-library(crayon)
-library(R6)
-library(cli)
-library(rgee)
-#rgee::ee_install(py_env = "rgee") ## installtion necessary only once
-#devtools::install_github(("gearslaboratory/gdalUtils"))
-library(gdalUtils)
-#library(gdalUtilities)
-#webshot::install_phantomjs(force = TRUE)
-#knit_hooks$set(webgl = hook_webgl)
-#knit_hooks$set(rgl.static = hook_rgl)
-knitr::opts_chunk$set(echo = TRUE, warning=FALSE, error=FALSE, message = FALSE)
-set.seed(123)
-```
 
 ## Action:
 
@@ -85,6 +45,7 @@ viz <- list(
 Map$addLayer(
   eeObject = srtm,
   visParams =  viz,
-  name = 'SRTM'
+  name = 'SRTM',
+  # legend = TRUE
 )
 ```

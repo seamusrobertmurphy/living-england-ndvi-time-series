@@ -85,6 +85,7 @@ viz <- list(
 Map$addLayer(
   eeObject = srtm,
   visParams =  viz,
-  name = 'SRTM'
+  name = 'SRTM',
+  # legend = TRUE
 )
 ```
