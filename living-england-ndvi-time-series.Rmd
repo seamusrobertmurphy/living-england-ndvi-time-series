@@ -1,0 +1,39 @@
+---
+title: "Pilot: Time Series of NDVI Analysis of Living England AOI"
+author: "SM"
+date: "2023-06-16"
+output: html_document
+---
+
+```{r setup, echo=FALSE, message=FALSE,warning=FALSE, error=FALSE}
+library(sf)
+library(sp)
+library(terra)
+library(raster)
+library(dplyr)
+library(caret)
+library(caretEnsemble)
+library(ForestTools)
+library(lidR)
+library(randomForest)
+library(e1071)
+library(rgdal)
+library(rgeos)
+library(Rcpp)
+library(rmarkdown)
+library(knitr)
+library(MASS)
+library(car)
+#devtools::install_github(("gearslaboratory/gdalUtils"))
+library(gdalUtils)
+#library(gdalUtilities)
+#webshot::install_phantomjs(force = TRUE)
+#knit_hooks$set(webgl = hook_webgl)
+#knit_hooks$set(rgl.static = hook_rgl)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, error=FALSE, message = FALSE)
+set.seed(123)
+```
+
+
+## R Markdown
+
