@@ -56,10 +56,35 @@ reticulate::use_python("/usr/bin/python3.10",
                        required = TRUE)
 reticulate::py_config()
 ```
-### Initialize Earth Engine (& Google Cloud/Tidyverse API if needed)
+### Initialize Earth Engine
 ```{r}
 # Necessary only once in each environment/IDE
 ee_Initialize() 
-#ee_Initialize(user = 'seamusrobertmurphy@gmail.com', drive = TRUE, gcs = TRUE) 
+# To activate Google Cloud/Tidyverse API for data storage/sharing
+# ee_Initialize(user = 'seamusrobertmurphy@gmail.com', drive = TRUE, gcs = TRUE) 
 ```
-### Derive DTM from Global LiDAR Data (SRTM) 
+
+### Run diagnostics on Earth Engine Installation
+```{r}
+ee_check()
+
+ee_check_python()
+ee_check_credentials()
+ee_check_python_packages()
+```
+### Derive DTM from Global SRTM data
+```{r}
+srtm <- ee$Image("USGS/SRTMGL1_003")
+# Set vizualization parameters
+viz <- list(
+  max = 4000,
+  min = 0,
+  palette = c("#000000","#5AAD5A","#A9AD84","#FFFFFF")
+)
+# Visualize
+Map$addLayer(
+  eeObject = srtm,
+  visParams =  viz,
+  name = 'SRTM'
+)
+```
